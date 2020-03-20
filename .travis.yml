@@ -13,11 +13,10 @@ after_success:
     - docker build -t jokingarcia/multi-nginx ./nginx
     - docker build -t jokingarcia/multi-server ./server
     - docker build -t jokingarcia/multi-worker ./worker
-
-#Log in to the docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-#Take those images and push them to docker hub
-- docker push jokingarcia/multi-client
-- docker push jokingarcia/multi-nginx
-- docker push jokingarcia/multi-server
-- docker push jokingarcia/multi-worker
+    #Log in to the docker CLI
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    #Take those images and push them to docker hub
+    - docker push jokingarcia/multi-client
+    - docker push jokingarcia/multi-nginx
+    - docker push jokingarcia/multi-server
+    - docker push jokingarcia/multi-worker
